@@ -1,0 +1,42 @@
+---
+title: "Diamonds Exploration"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Reading the Excel File
+
+```{r}
+library(readxl)
+mydiamonds <- read_excel("diamonds.xlsx")
+```
+# Names of variables
+
+```{r}
+names(mydiamonds)
+```
+
+# Top 6 obeservations
+
+```{r}
+head(mydiamonds)
+```
+
+# View the data structure
+
+```{r}
+str(mydiamonds)
+```
+
+# Create new pricetable variable
+
+```{r}
+mydiamonds$pricetable <- mydiamonds$price + mydiamonds$table
+head(mydiamonds$pricetable)
+summary(mydiamonds$pricetable)
+```
+
+
